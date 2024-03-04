@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="article.html"> Article</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Gallery</h1>
+    </header>
+    <main class="photo-gallery">
+        <div class="gallery-item">
+            <img src="Images/Dogs1.jpg" alt="Photo 1">
+        </div>
+        <div class="gallery-item">
+            <img src="Images/Dogs 2.jpg" alt="Photo 2">
+        </div>
+        <div class="gallery-item">
+            <img src="Images/Dogs3.jpg" alt="Photo 3">
+        </div>
+        <!-- Add more gallery items as needed -->
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+    </main>
+
+    <script>
+        // JavaScript code to handle gallery navigation
+        let currentIndex = 0;
+        const galleryItems = document.querySelectorAll('.gallery-item');
+    
+        function showItem(index) {
+            // Hide all gallery items
+            galleryItems.forEach(item => {
+                item.classList.remove('active');
+            });
+    
+            // Display the selected gallery item
+            galleryItems[index].classList.add('active');
+        }
+    
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            showItem(currentIndex);
+        });
+    
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            showItem(currentIndex);
+        });
+    
+        // Show the first item initially
+        showItem(0);
+    </script>
+    
+</body>
+</html>

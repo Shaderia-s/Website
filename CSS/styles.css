@@ -1,0 +1,72 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+nav {
+    margin: 0;
+    padding: 0;
+    background-color: none; /* Set the background color for navbar */
+    width: 100vw; /* Ensure the navbar extends to full viewport width */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 20px;
+    margin-right: 40px; /* Set margin to zero to remove any default margin */
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+nav a:hover {
+    color: #656262;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f3f3f3;
+}
+
+.photo-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-item {
+    display: none; /* Hide all gallery items initially */
+}
+
+.gallery-item img {
+    max-width: 100%; /* Ensure images don't exceed their container's width */
+    height: auto; /* Maintain aspect ratio */
+    width: 200px; /* Set a specific width for the images */
+    height: 150px; /* Set a specific height for the images */
+}
+
+.gallery-item.active {
+    display: block; /* Show only the active gallery item */
+}
+
+#prevButton,
+#nextButton {
+    margin-top: 10px;
+}
